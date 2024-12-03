@@ -3,7 +3,13 @@ import axios from 'axios';
 
 export const fetchExperiences = createAsyncThunk('experience/fetchExperiences', async () => {
   const port = process.env.REACT_APP_PORT || 5000;
-  const apiUrl = process.env.REACT_APP_SERVER_SIDE_URL || `${process.env.REACT_APP_API_BASE_URL}:${port}/api/experience`;
+  // check if environment variable REACT_APP_SERVER_SIDE_URL is set or not
+  let apiUrl;
+  if(process.env.REACT_APP_SERVER_SIDE_URL) {
+    apiUrl = process.env.REACT_APP_SERVER_SIDE_URL + '/api/experience';
+  } else {
+    apiUrl = `${process.env.REACT_APP_API_BASE_URL}:${port}/api/experience`;
+  }
   const response = await axios.get(apiUrl);
   return response.data;
 });
