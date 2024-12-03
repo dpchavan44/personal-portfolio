@@ -9,6 +9,7 @@ export const fetchAwards = createAsyncThunk('awards/fetchAwards', async () => {
     } else {
       apiUrl = process.env.REACT_APP_SERVER_SIDE_URL || `${process.env.REACT_APP_API_BASE_URL}:${port}/api/award`;
     }
+    console.log(apiUrl);
     //console.log(apiUrl);
     const response = await axios.get(apiUrl);
     return response.data;

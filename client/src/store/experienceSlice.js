@@ -10,6 +10,7 @@ export const fetchExperiences = createAsyncThunk('experience/fetchExperiences', 
   } else {
     apiUrl = `${process.env.REACT_APP_API_BASE_URL}:${port}/api/experience`;
   }
+  console.log(apiUrl);
   const response = await axios.get(apiUrl);
   return response.data;
 });

@@ -9,6 +9,7 @@ export const fetchCertifications = createAsyncThunk('certifications/fetchCertifi
   } else {
     apiUrl = `${process.env.REACT_APP_API_BASE_URL}:${port}/api/certification`;
   }
+  console.log(apiUrl);
   const response = await axios.get(apiUrl);
   return response.data;
 });
