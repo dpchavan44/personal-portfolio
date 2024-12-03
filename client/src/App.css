@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background animation styles */
+.background-animation {
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark theme background animation */
+.dark .background-animation {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+}
+
+/* Light theme background animation */
+.light .background-animation {
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+}
+/* NavigationMenu.css */
+@keyframes borderColorDarkMode {
+  0% {
+    border-color: rgb(106, 106, 230);
+  }
+  25% {
+    border-color: lightblue;
+  }
+  50% {
+    border-color: white;
+  }
+  75% {
+    border-color: lightblue;
+  }
+  100% {
+    border-color: rgb(105, 105, 216);
+  }
+}
+
+@keyframes borderColorWhiteMode {
+  0% {
+    border-color: rgba(222, 231, 235, 0);
+  }
+  25% {
+    border-color: rgb(171, 207, 219);
+  }
+  50% {
+    border-color: rgb(96, 101, 109);
+  }
+  75% {
+    border-color: rgb(228, 238, 241);
+  }
+  100% {
+    border-color: rgb(183, 183, 231);
+  }
+}
+@keyframes borderAnimation {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #1E3A8A; /* Blue */
+  }
+}
+.icon-hover:hover {
+  transform: scale(1.5);
+  transition: transform 0.08s ease-in-out;
+}
+.border-animated {
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  animation: borderAnimation 0.5s forwards;
+}
+.dark .border-animated {
+  border-color: #fff; /* Border color for dark mode */
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.dark .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(179, 219, 241, 0.2);
+}
+.card-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Apply animation only on medium and larger devices */
+@media (min-width: 768px) {
+  .dark .animate-border {
+    animation: borderColorDarkMode 4s infinite;
+  }
+
+  .animate-border1 {
+    animation: borderColorWhiteMode 8s infinite;
+  }
+}
+
+.bottom-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Bottom shadow for dark mode */
+.dark .bottom-shadow {
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.233),
+    0 2px 4px -1px rgba(255, 255, 255, 0.24);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.171);
+}
+
+.icon-link {
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+.group:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.rotate-y-0 {
+  transform: rotateX(0deg);
+}
+
+.rotate-y-180 {
+  transform: rotateX(180deg);
+}
+
+.border-animated {
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  animation: borderAnimation 5s linear infinite;
+}
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

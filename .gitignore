@@ -1,0 +1,12 @@
+# .gitignore
+node_modules/
+.env
+build/
+client/build/
+server/build/
+client/.env
+server/.env
+client/node_modules/
+server/node_modules/
+client/.gitignore
+data.json
