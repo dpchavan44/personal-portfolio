@@ -104,7 +104,7 @@ const About = () => {
   return (
     <main className="flex flex-col items-center justify-start">
       <div className="w-full md:w-auto bg-slate-50 dark:bg-gray-800 min-h-screen px-4">
-        <div className="flex flex-row md:my-4 bg-slate-200 dark:bg-blue-950 rounded-full">
+        <div className="flex flex-row mt-1 py-1 md:my-4 bg-slate-200 dark:bg-blue-950 rounded-full">
           <div
             className={`flex items-center justify-center w-full text-xl pb-1 rounded-full ${
               selectedSection === "whoami"
